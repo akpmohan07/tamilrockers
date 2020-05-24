@@ -1,0 +1,48 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- <div class="container px-4  mt-5 mx-5  border border-dark rounded">
+		<div class="row ">
+			{% for movie in data %}
+		<div class="col col-md-4" >
+		<div class="card-panel hoverable" style="width: 18rem;">
+		  <img src= "/movie/download12.jpg" class="card-img-top" >
+		  <div class="card-body text-center">
+		  	{{movie.poster}}
+		    <h5 class="card-title bg-light rounded">{{movie.name}}</h5>
+		    <a href="#" class="stretched-link"></a>
+		  </div>	
+		  </div>
+		  </div>
+		{% endfor  %}
+		</div> -->
+
+<div class="container mt-5" style="max-width:1800 min-height:100%">
+<div class="row">
+	{% for movie in data %}
+<div class="col s12 m6 l3">
+          
+          <div class="card-panel hoverable z-depth-2 " style="height:300px; width:300px; background-color:#FFFFFF;">
+            	<a href="/machine-learning-tutorials/" class="waves-effect waves-light" style="color:#000">
+              <div class="card-image " style="padding-right: 100px;">
+                <img class="responsive-img" src="https://drive.google.com/uc?export=download&id=1kazyfB4JHoZSmczN-FBVXB4C8qN5b46G" style="width:250px">
+                <br><span class="card-title text-center"><h5><strong>{{movie.name}}</strong></h5></span>
+              </div>
+              {{movie.poster.url}}
+              <div class="card-content">
+                <p></p>
+              </div>
+              </a>
+              <div class="card-action ">
+
+                <a href="{{movie.id}}/detail_view" class="stretched-link"></a>              
+              </div>
+            </div>
+          
+        </div>
+        {% endfor %}
+        </div>
+          </div>
+ 
+{% endblock %}
